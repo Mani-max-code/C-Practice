@@ -96,22 +96,21 @@ Rectangle compare(Rectangle &r1,Rectangle &r2){
 
 }
 class Array{
-
-    
     public :
       int *arr;
-      Array (Array &a){
-        arr=a.arr;
-
-      }
-      Array(Array &a){
-        arr=new int[5];
+      Array(){
+        arr = new int[5];
         for(int i = 0; i < 5; i++)
-        arr[i] = a.arr[i];
-
-
+          arr[i] = 0;
       }
-
+      Array(const Array &a){
+        arr = new int[5];
+        for(int i = 0; i < 5; i++)
+          arr[i] = a.arr[i];
+      }
+      ~Array(){
+        delete [] arr;
+      }
 };
 
 int main(){
