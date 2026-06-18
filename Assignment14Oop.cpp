@@ -1,6 +1,15 @@
 #include<iostream>
 using namespace std;
+class InsufficientFunds :public exception{
 
+  string message="Need more!";
+public :
+  const char* what() const noexcept override{
+
+    return message.c_str();
+  }
+     
+};
 class BankAccount{
     private :
        long accountNo;
@@ -33,11 +42,19 @@ class BankAccount{
          return balance;
        }
        void deposit(int amount){
+
         cout<<"Enter amount to deposit : "<<endl;
+        if(amount<0){
+           throw invalid_argument("Amount should be positive number");
+        }
         balance += amount;
        }
        void withdraw(int amount){
+
          cout<<"Enter amount to deposit : "<<endl;
+         if(balance<amount){
+           throw InsufficientFunds();
+         }
          if(balance >=amount){
             balance -= amount;
          }
