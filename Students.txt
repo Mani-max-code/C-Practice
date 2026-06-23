@@ -1,0 +1,7 @@
+Mani 24 7.4
+Dora 23 8.4
+Naveen 25 9.4
+Balu 23 6.4
+Siddhu 25 8.4
+Surya 25 8.8 
+Ravi 25 8.7 
